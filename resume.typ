@@ -1,6 +1,5 @@
 #import "@preview/basic-resume:0.2.9": *
 
-// Put your personal information here, replacing mine
 #let name = "Gordon Chen"
 #let location = "Guilford, CT"
 #let email = "gordonbchen@gmail.com"
@@ -39,7 +38,20 @@
 * #generic-one-by-two(left: "", right: "")
 */
 
-== Work Experience
+== Education
+
+#edu(
+  institution: "University of Connecticut: Honors Program",
+  location: "Storrs, CT",
+  dates: dates-helper(start-date: "2024", end-date: "Expected 2028"),
+  degree: "Computer Science BS, Pure Math BA",
+)
+- Cumulative GPA: 4.0\/4.0 | Dean's List, Babbidge Scholar, Academic Excellence Scholarship
+- CS: Reinforcement Learning, Bayesian Machine Learning, Operating Systems, Discrete Optimization, Microprocessors, Computer Architecture, Systems Programming
+- Math: Stochastic Processes, Partial Differential Equations, Complex Variables, Multivariable Calculus, Linear Algebra
+- Extracurriculars: Hacklab VP, Math Club
+
+== Experience
 
 #work(
   title: "Undergrad Researcher: Bayesian ML for Genetic Data",
@@ -47,10 +59,10 @@
   company: "UConn",
   dates: "Summer 2026",
 )
-- Developed bayesian models to model genetic variation in haplotypes
-- Created a new initialization algorithm to increase imputation accuracy
-- Optimized inference algorithm for bayesian model (C++)
-- Designed robust evaluation metrics for clusters given a true reference geneaology
+- Developed Bayesian nonparametric models for haplotype clustering and imputation
+- Designed a new PBWT-based initialization algorithm
+- Implemented and optimized maximization expectation inference algorithms in C++
+- Designed metrics to evaulate inferred clusters given a true reference geneaology
 
 #work(
   title: "Teaching Assistant: Haskell",
@@ -58,62 +70,43 @@
   company: "UConn",
   dates: "Spring 2026",
 )
-- Helped students learn functional programming in Haskell
-- Led discussion and exam review sessions
-- Created Haskell discussion worksheets
+- Taught functional programming in Haskell
+- Led discussion and exam review sessions, created study and practice materials
 
 #work(
   title: "Junior Sequence Developer Intern",
   location: "Guilford, CT",
-  company: "Hyperfine (MRI)",
+  company: "Hyperfine (Portable MRI)",
   dates: "Summers 2023-2025",
 )
-- Programmed in Python for portable ultra-low-field MRIs
 - Automated end-to-end image reconstruction testing for CI
-- Developed deep learning models for image denoising
+- Developed deep learning models for image denoising and sequence translation
+- Built Python tooling for pulse-sequence developement on ultra-low-field MRI systems
 
 == Projects
 #project(name: "dfcp", url: "github.com/gordonbchen/dfcp")
-- Discrete Fragmentation-Coagulation Process model and inference algorithm (C++)
+- Implemented a Bayesian nonparametric haplotype clustering model with viterbi and forward-backward
+  inference in C++
+- Built evaluation tooling against reference genealogy and Beagle-style imputation metrics
+
+#project(name: "ectf-2026", url: "github.com/uconn-ectf/ectf-2026")
+- Developed embedded firmware in C for MITRE's 2026 Embedded Capture the Flag competition
 
 #project(name: "taming-impala", url: "github.com/gordonbchen/taming-impala")
-- Distributed, async RL with IMPALA (PyTorch)
+- Implemented distributed asynchronous reinforcement learning with IMPALA in PyTorch
+  including actor/learner workers and off-policy V-trace correction
+- Designed a custom communication protocol for distributed training on heterogenous compute
+  over the internet
 
 #project(name: "tiny-diffusion", url: "github.com/gordonbchen/tiny-diffusion")
-- DDPM and Latent Diffusion Models with adversarial patch loss and VAE compression (PyTorch)
+- Implemented DDPM and Latent Diffusion Models in PyTorch with VAE compression and adversarial patch loss
 
-#project(name: "LLMs from scratch", url: "github.com/gordonbchen/ml-explore")
-- GPT2, Llama3, MoE from scratch in PyTorch.
+#project(name: "FRC Robot", url: "github.com/applepi-2067/2024_Robot")
+- Implemented Kalman-filter-based motor, sensor, and vision fusion, and autonomous routines
+- Co-Captain and Software Lead for Apple Pi, FRC Team 2067
 
 == Skills
-- Python: deep learning (PyTorch, TF) and scientific computing libraries (NumPy, Matplotlib...)
-- Other languages: Haskell, C++, C, RISC-V assembly, Java
-- Technologies: Linux, Git, SSH, Docker
-- Arch + Neovim btw
-- Interests: math, machine learning, compilers
-
-== Education
-
-#edu(
-  institution: "UConn Honors",
-  location: "Storrs, CT",
-  dates: dates-helper(start-date: "2024", end-date: "2028"),
-  degree: "Computer Science BS, Pure Math BA",
-)
-- Cumulative GPA: 4.0\/4.0 | Dean's List, Babbidge Scholar, Honors Program,
-  Academic Excellence Scholarship
-- CS: RL, Bayesian ML, OS, Discrete Optim, Microprocessors, Computer Architecture,
-  Systems Programming
-- Math: Stoch, PDEs, Complex Vars, Probability, Multi, Linear Algebra
-- Hacklab VP, Math Club
-
-#edu(
-  institution: "Guilford High School",
-  location: "Guilford, CT",
-  dates: dates-helper(start-date: "2020", end-date: "2024")
-)
-- 1570 SAT
-- Robotics Co-Captain and Software Lead: Apple Pi, FRC Team 2067
-  (#link("https://github.com/applepi-2067/2023_Robot")[2023_Robot]
-  and #link("https://github.com/applepi-2067/2024_Robot")[2024_Robot])
-
+- Proficient languages: Python, C++, C, Haskell
+- Familiar languages: RISC-V, Java
+- ML: PyTorch, TensorFlow, NumPy, Scipy, Matplotlib
+- Tools: Linux, Git, SSH, Docker
